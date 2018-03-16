@@ -13,8 +13,6 @@ class App extends Component {
     }
 
     switchNameHandler = () => {
-        let index = Math.floor(Math.random() * 2);
-
         // DONT DO THIS:
         // this.state.persons[index].name += " Clicked";
 
@@ -32,9 +30,16 @@ class App extends Component {
             <div className="App">
                 <h1>Hi I am a React App</h1>
                 <button onClick={this.switchNameHandler}>Switch Name</button>
-                <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-                <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>Hobbies: Boxing!</Person>
-                <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+                <Person
+                    name={this.state.persons[0].name}
+                    age={this.state.persons[0].age}/>
+                <Person
+                    name={this.state.persons[1].name}
+                    age={this.state.persons[1].age}
+                    click={this.switchNameHandler}>Hobbies: Boxing!</Person>
+                <Person
+                    name={this.state.persons[2].name}
+                    age={this.state.persons[2].age}/>
             </div>
         );
     }
