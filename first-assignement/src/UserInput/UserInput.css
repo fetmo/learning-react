@@ -1,0 +1,8 @@
+.UserInput {
+    border: none;
+    border-bottom: 1px dotted black;
+    font-style: italic;
+    text-transform: uppercase;
+    margin: 20px auto;
+    text-align: center;
+}
