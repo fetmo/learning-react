@@ -1,18 +1,15 @@
 import React from 'react';
 
 const validationComponent = (props) => {
-    let message = null;
-    const inputLength = props.input.length;
+    const inputLength = props.length;
     const min= props.min;
-    const max = props.max;
+    let message = (
+        <p>Text too short</p>
+    );
 
-    if(inputLength < min){
+    if(inputLength > min){
         message = (
-            <p>Text too short</p>
-        );
-    }else if(inputLength > max){
-        message = (
-            <p>Text too long</p>
+            <p>Text long enough!</p>
         );
     }
 

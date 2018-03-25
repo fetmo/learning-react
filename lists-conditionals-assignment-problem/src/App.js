@@ -7,8 +7,6 @@ import CharComponent from './CharComponent/CharComponent';
 class App extends Component {
     state = {
         textInput: '',
-        textLength: 0,
-        textMax: 50,
         textMin: 5
     };
 
@@ -29,8 +27,7 @@ class App extends Component {
 
     setTextAndLength = (text) => {
         this.setState({
-            textInput: text,
-            textLength: text.length
+            textInput: text
         })
     }
 
@@ -55,10 +52,10 @@ class App extends Component {
         return (
             <div className="App">
                 <input type="text" onChange={(event) => this.changeHandler(event)} value={this.state.textInput}/>
-                <p>Length of the text is: {this.state.textLength}</p>
+                <p>Length of the text is: {this.state.textInput.length}</p>
                 <ValidationComponent
-                    min={this.state.textMin} max={this.state.textMax}
-                    input={this.state.textInput}/>
+                    min={this.state.textMin}
+                    length={this.state.textInput.length}/>
                 {chars}
             </div>
         );
